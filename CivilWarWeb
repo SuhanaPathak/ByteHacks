@@ -1,0 +1,174 @@
+import random
+import turtle
+def main():  
+  import time
+  print "Welcome to the Civil War web for soldiers. It can calculate different things and give information on some things you need help with, such as: "
+  print "- Calculate the amount of time a trip will take -  Enter 'a' " 
+  print "- How to care for a wound without first-aid - Enter 'b' "
+  print "- What all should you have in your knapsack (called the soldiers's trunk) -  Enter 'c' "
+  print "- Just a normal calculator -  Enter 'd' "
+  print "- Keep track of your battle wins and losses -  Enter 'e' "
+  print "- A game to play when you get bored between battles -  Enter 'f' "
+  
+  time.sleep(3)
+  print ""
+  
+  letter = raw_input("Please enter the thing you want to do according to the corresponding letter")
+  
+  if letter == 'a':
+    print ""
+    print "This program will calculate the amount of hours a trip will take."
+    miles = raw_input("How many miles are you traveling? (Add decimal point if it is not a whole number)")
+    mph = raw_input("How fast can your horse carry you?(Miles per hour, Add decimal point if it is not a whole number)")
+    breakTime = raw_input("How much time do you plan to spend on breaks? (In hours, Add decimal point if it is not a whole number)")
+    time = float(miles)/float(mph)
+    totalTime = float(time) + float(breakTime)
+    print "Your total time is " , totalTime , " hours."
+    print ""
+    again = raw_input("Do you want to do a different thing on the web? Please enter 'yes' or 'no'.")
+    if again == "yes":
+      print ""
+      main()
+    elif again == "no":
+      print ""
+      print "Thank you for using the Civil War web."
+    
+  if letter == 'b':
+    print ""
+    print "Wound cleaning: Use water to clean the wound. Take about a liter of water, and make sure it is as clean as you can get it, to clean out the wound."
+    print "Bandage: Use fabric. Crumple it and press it against the wound until the bleeding stops. Once it stops, tie a strip of fabric around the wound."
+    print ""
+    again = raw_input("Do you want to do a different thing on the web? Please enter 'yes' or 'no'.")
+    if again == "yes":
+      print ""
+      main()
+    elif again == "no":
+      print ""
+      print "Thank you for using the Civil War web."
+    
+  if letter == 'c':
+    print ""
+    print "You should carry an extra pair of clothing, other personal things if you want, a gum blanket for the rain, and a shelter half in your soldier's trunk. "
+    print "Make sure you have your issued harversack to carry your food, and your canteen. Have all your utensils such as a tin cup for coffee, plate, knife, fork, and spoon."
+    print ""
+    again = raw_input("Do you want to do a different thing on the web? Please enter 'yes' or 'no'.")
+    if again == "yes":
+      print ""
+      main()
+    elif again == "no":
+      print ""
+      print "Thank you for using the Civil War web."
+  
+  if letter == 'd':
+    print ""
+    asdm = raw_input("Would you like to add - type 'a' - subtract - type 's'- multiply - type 'm' - division - type 'd'.")
+    print ""
+    
+    if asdm == 'a':
+      n1 = raw_input("Type addend 1")
+      n2 = raw_input("Type addend 2")
+      total = float(n1) + float(n2)
+      print "The sum is " , total
+    
+    if asdm == 's':
+      n1 = raw_input("Type the minuend")
+      n2 = raw_input("Type subtrahend")
+      total = float(n1) - float(n2)
+      print "The difference is " , total
+    
+    if asdm == 'd':
+      n1 = raw_input("Type the dividend")
+      n2 = raw_input("Type the divisor")
+      total = float(n1)/float(n2)
+      print "The quotient is " , total
+    
+    if asdm == 'm':
+      n1 = raw_input("Type the multiplicand")
+      n2 = raw_input("Type the multiplier")
+      total = float(n1) * float(n2)  
+      print "The product is " , total
+    
+    print ""
+    again = raw_input("Do you want to do a different thing on the web? Please enter 'yes' or 'no'.")
+    if again == "yes":
+      print ""
+      main()
+    elif again == "no":
+      print ""
+      print "Thank you for using the Civil War web."
+  
+    
+  if letter == 'e':
+    print ""
+    dates = int(raw_input("How many wins/losses you like enter?"))
+    for i in range(dates):
+      print "" 
+      print " Date              Won or Lost"
+      print " ------------------------------"
+      raw_input("")
+      dates = dates - 1
+    print ""
+    again = raw_input("Do you want to do a different thing on the web? Please enter 'yes' or 'no'.")
+    if again == "yes":
+      print ""
+      main()
+    elif again == "no":
+      print ""
+      print "Thank you for using the Civil War web."
+    
+
+  if letter == 'f':
+    print ""
+    
+    billy = turtle.Turtle()
+    billy.shape("circle")
+    billy.color("orange")
+    billy.penup()
+    billy.right(90)
+    billy.forward(60)
+    billy.left(90)
+    billy.pendown()
+    
+    joe = turtle.Turtle()
+    joe.shape("circle")
+    joe.color("pink")
+    joe.penup()
+    joe.left(90)
+    joe.forward(60)
+    joe.right(90)
+    joe.pendown()
+    
+    b = random.randint(0, 300)
+    j = random.randint(0, 300)
+    
+    winGuess = raw_input("Which color do you think will win the race? Enter 'pink' or 'orange'.")
+    
+    billy.forward(b)
+    joe.forward(j)
+    
+    if b > j:
+      winner = "orange"
+    
+    if b < j:
+      winner = "pink"
+      
+    if b == j:
+      winner = "tie"
+      print "It was a tie. Your guess was both right and wrong."
+    
+    if winner == winGuess:
+      print "You guessed correct! Congrats!"
+      
+    else:
+      print "You lost! Good try."
+      
+    print ""
+    again = raw_input("Do you want to do a different thing on the web? Please enter 'yes' or 'no'.")
+    if again == "yes":
+      print ""
+      main()
+    elif again == "no":
+      print ""
+      print "Thank you for using the Civil War web."
+    
+main()
